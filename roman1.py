@@ -17,4 +17,9 @@ roman_numeral_map = (('M',  1000),
 def to_roman(n):
     '''convert integer to Roman numeral'''
     result = ''
-    pass
+    for numeral, integer in roman_numeral_map:
+        while n >= integer:
+            result += numeral
+            n -= integer
+            
+    return result
