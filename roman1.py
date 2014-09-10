@@ -31,6 +31,10 @@ def to_roman(n):
             #print('substracting{0} from input, adding {1} to output'.format(integer, numeral))
     return result
 
+def  from_roman(s):
+    '''convert Roman numero to integer'''
+    pass
+
 class OutOfRangeError(ValueError): pass
 
 class NotIntegerError(ValueError): pass
