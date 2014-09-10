@@ -23,3 +23,7 @@ def to_roman(n):
             n -= integer
             print('substracting{0} from input, adding {1} to output'.format(integer, numeral))
     return result
+
+class OutOfRangeError(ValueError):
+
+    pass
