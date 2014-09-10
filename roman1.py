@@ -33,7 +33,14 @@ def to_roman(n):
 
 def  from_roman(s):
     '''convert Roman numero to integer'''
-    pass
+    result = 0
+    index = 0
+    for numeral, integer in roman_numeral_map:
+        while s[index:index+len(numeral)] == numeral:
+            result += integer
+            index += len(numeral)
+            #print('found', numeral, 'of length', len(numeral), ', adding', integer)
+    return result
 
 class OutOfRangeError(ValueError): pass
 
