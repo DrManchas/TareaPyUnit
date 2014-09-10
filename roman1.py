@@ -20,6 +20,9 @@ def to_roman(n):
     if not (0 < n < 4000):
         raise OutOfRangeError('number out of range (must be less than 4000)')
 
+    if not isinstance(n, int):
+        raise NotIntegerError('non-integers can not be converted')
+
     result = ''
     for numeral, integer in roman_numeral_map:
         while n >= integer:
@@ -28,6 +31,6 @@ def to_roman(n):
             #print('substracting{0} from input, adding {1} to output'.format(integer, numeral))
     return result
 
-class OutOfRangeError(ValueError):
+class OutOfRangeError(ValueError): pass
 
-    pass
+class NotIntegerError(ValueError): pass
